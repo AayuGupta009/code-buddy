@@ -5,7 +5,7 @@ import { AppModule } from '../src/app.module';
 import * as request from 'supertest';
 
 describe('CalcController (e2e)', () => {
-  let app;
+  let app: { init: () => any; getHttpServer: () => any; };
 
   beforeEach(async () => {
     const moduleFixture: TestingModule = await Test.createTestingModule({
