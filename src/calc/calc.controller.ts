@@ -1,4 +1,4 @@
-import { Body, Controller, Post } from '@nestjs/common';
+import { Body, Controller, Get, Post } from '@nestjs/common';
 import { CalcService } from './calc.service';
 import { CalcDto } from './calc.dto';
 
@@ -11,6 +11,13 @@ export class CalcController {
     const result = this.calcService.calculateExpression(calcBody);
     return {
       result,
+    };
+  }
+
+  @Get('/')
+  hello() {
+    return {
+      result: 'Hello world',
     };
   }
 }
